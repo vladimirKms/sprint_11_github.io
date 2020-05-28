@@ -1,0 +1,43 @@
+.popup__imag{
+    display: none;
+    /*top: 20px;*/
+   
+        
+}
+
+@media screen and (max-width: 5100px) {
+ img { max-width: 80vw;
+      max-height: 80vh;
+ }
+
+.popup__conntent_imag{
+
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    border-radius:0px;
+   
+
+   
+}
+.popup__image_prevew{
+    position: absolute;
+ 
+    margin-right: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.popup__close_imag{
+    position: relative;
+    transform: translateY(-100%);
+    width: 26px;
+    padding-left: 26px;
+    cursor: pointer;
+    z-index: 2;
+}
+    

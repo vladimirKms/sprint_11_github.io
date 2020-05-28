@@ -1,0 +1,26 @@
+@import url(../vendor/normalize.css);
+@import url(../vendor/fonts.css);
+@import url(../blocks/root/root.css);
+@import url(../blocks/header/header.css);
+@import url(../blocks/logo/logo.css);
+@import url(../blocks/profile/profile.css);
+@import url(../blocks/user-info/user-info.css);
+@import url(../blocks/button/button.css);
+@import url(../blocks/popup/__button/popup__button.css);  /* */
+@import url(../blocks/user-about/user-about__button.css);
+@import url(../blocks/places-list/places-list.css);
+@import url(../blocks/place-card/place-card.css);
+@import url(../blocks/popup/popup.css);
+@import url(../blocks/popup/__image/popup__content_image.css);
+@import url(../blocks/popup/__form/popup__form_user_massage.css);
+@import url(../blocks/popup/__form/popup__input_massage_imag.css);
+@import url(../blocks/popup/__input/popup__input_type_name-user.css);
+@import url(../blocks/popup/__input/popup__input_type_about-user.css);
+@import url(../blocks/popup/__input/popup__input_type_name.css);
+@import url(../blocks/popup/__input/popup__input_type_link.css);
+
+
+body {
+  background-color: #000;
+}
+
