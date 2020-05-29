@@ -1,4 +1,4 @@
-class UserInfo {
+export class UserInfo {
   constructor(pageContent, formInputContent) {
     this.pageContent = pageContent;
     this.formInputContent = formInputContent;

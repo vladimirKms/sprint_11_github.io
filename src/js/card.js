@@ -1,4 +1,4 @@
-class Card {
+export class Card {
 
 constructor(){
   }
@@ -45,7 +45,7 @@ constructor(){
   }
 
 
-
+/*
   like(container) {
     container.addEventListener('click', function (event) {
       if (event.target.classList.contains('place-card__like-icon')) {
@@ -53,6 +53,6 @@ constructor(){
       }
     })
   }
-
+*/
 }
 
