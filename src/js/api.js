@@ -1,11 +1,4 @@
-//
-//
-// См. Review.md
-//
-//
-
-
-class Api {
+export class Api {
   constructor(baseURL, token) {
     this.baseUrl = baseURL
    

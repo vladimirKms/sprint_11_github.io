@@ -1,7 +1,7 @@
-class CardList extends Card {
+export class CardList {
 
   constructor(container, arrCard, data) {
-    super(data)
+    //super(data)
   //constructor(container, arrCard){
  
   //constructor(container, arrCard){
@@ -38,7 +38,13 @@ class CardList extends Card {
 
   };
 
+  like(container) {
+    container.addEventListener('click', function (event) {
+      if (event.target.classList.contains('place-card__like-icon')) {
+          event.target.classList.toggle('place-card__like-icon_liked');
+      }
+    })
 
-
+  };
 
 }
