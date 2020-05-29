@@ -1,6 +1,7 @@
 /* eslint-disable spaced-comment */
 /* eslint-disable prefer-arrow-callback */
 "use strict";
+import "./pages/index.css"
 const placesList = document.querySelector('.places-list'); // создание переменной для общего элемента страницы с карточками
 const addCard = document.querySelector('.popup');// общая форма ввода новой краточки
 const addCardUser = document.querySelector('.popup__user');// общая форма добавления нового user(a)
