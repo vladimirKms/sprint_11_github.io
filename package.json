@@ -2,7 +2,7 @@
   "name": "practicum",
   "homepage": "https://vladimirkms.github.io/sprint_11_github.io/",
   "version": "1.0.0",
-  "description": "",
+  "description": "learn project",
   "main": "index.js",
   "scripts": {
     "build": "cross-env NODE_ENV=production rimraf dist && webpack --mode production",
@@ -15,8 +15,6 @@
     "@babel/preset-env": "^7.9.6",
     "autoprefixer": "^9.8.0",
     "babel-loader": "^8.1.0",
-    "babel-polyfill": "^6.26.0",
-    "core-js": "^3.4.1",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
     "cssnano": "^4.1.10",
@@ -36,6 +34,7 @@
     "webpack-md5-hash": "0.0.6"
   },
   "dependencies": {
+    "core-js": "^3.4.1",
     "babel": "^6.23.0",
     "babel-polyfill": "^6.26.0",
     "group-css-media-queries-loader": "^3.0.2"

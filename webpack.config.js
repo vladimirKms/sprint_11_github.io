@@ -27,8 +27,19 @@ module.exports = {
                  {
             test: /\.css$/,
             use:  [
-                (isDev ? 'style-loader' :
-                MiniCssExtractPlugin.loader), 'css-loader', 'postcss-loader']
+                               (isDev ? 'style-loader' :
+                MiniCssExtractPlugin.loader),
+                {
+                    loader:'css-loader',
+                    options: {
+                        importLoaders: 2
+                    } 
+                },
+                
+                /*'css-loader', */
+                
+                'postcss-loader'
+                 ]
                 },
              {
             test: /\.(png|jpg|gif|ico|svg)$/,
@@ -72,6 +83,7 @@ module.exports = {
               new WebpackMd5Hash(),
               new webpack.DefinePlugin({
                   'NODE_ENV':JSON.stringify(process.env.NODE_ENV)
+                  
               }),
             ]
 
