@@ -1,11 +1,18 @@
 
 const path = require('path');
+<<<<<<< HEAD
 const webpack = require('webpack');
+=======
+>>>>>>> f918a62b7aa56a604ef441c5b6dc0efb2e3ca672
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+<<<<<<< HEAD
 
+=======
+const webpack = require('webpack');
+>>>>>>> f918a62b7aa56a604ef441c5b6dc0efb2e3ca672
 // подключаем плагин
 const isDev = process.env.NODE_ENV === 'development';
 // создаем переменную для development-сборки
@@ -63,11 +70,15 @@ module.exports = {
                 // Означает, что:
                 inject: false, // стили НЕ нужно прописывать внутри тегов
                 template: './src/index.html', // откуда брать образец для сравнения с текущим видом проекта
+<<<<<<< HEAD
                 filename: 'index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
                 minify:
                     false
                     /*collapseWhitespace: true*/
                 
+=======
+                filename: 'index.html' // имя выходного файла, то есть того, что окажется в папке dist после сборки
+>>>>>>> f918a62b7aa56a604ef441c5b6dc0efb2e3ca672
               }),
               new WebpackMd5Hash(),
               new webpack.DefinePlugin({

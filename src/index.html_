@@ -5,8 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Mesto</title>
+<<<<<<< HEAD:src/index.html_
   <link rel="stylesheet" href="./pages/index.css">
   <!--link rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>"-->
+=======
+  <!--link rel="stylesheet" href="./pages/index.css"-->
+  <rel="stylesheet" href="<%=htmlWebpackPlugin.files.css %>">
+>>>>>>> f918a62b7aa56a604ef441c5b6dc0efb2e3ca672:src/index.html
 </head>
 <body>
   <div class="root">
@@ -91,11 +96,17 @@
   <script src="js/cardList.js"></script> 
   <script src="js/api.js"></script> 
   <!--script src="js/initialCard.js"></script--> 
+<<<<<<< HEAD:src/index.html_
   <script src="script.js>"></script>
   
 <!--
   <script src="<%= htmlWebpackPlugin.files.js %>"></script>
 -->
+=======
+  <script src="<%= htmlWebpackPlugin.files.js %>"></script>
+  <!--script src=index.js></script-->
+  
+>>>>>>> f918a62b7aa56a604ef441c5b6dc0efb2e3ca672:src/index.html
 
 </body>
 </html>
