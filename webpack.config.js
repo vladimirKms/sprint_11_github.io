@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const webpack = require('webpack');
 // подключаем плагин
 const isDev = process.env.NODE_ENV === 'development';
 // создаем переменную для development-сборки
@@ -32,8 +31,9 @@ module.exports = {
                 },
              {
             test: /\.(png|jpg|gif|ico|svg)$/,
-            use: ['file-loader?name=../images/[name].[ext]', // указали папку, куда складывать изображения
-                            {
+            //use: ['file-loader?name=../images/[name].[ext]', // указали папку, куда складывать изображения
+            use: ['file-loader?name=../dist/images/[name].[ext]',                
+            {
                                     loader: 'image-webpack-loader',
                                     options: {}
                             },
