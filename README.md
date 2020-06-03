@@ -9,10 +9,10 @@
 Git-bash.
 Запустить консоль git-bash.
 В консоле последовательно набрать команды:
-npm -i babel --save-dev
-npm -i core-js --save-dev
-npm -i babel-polyfill --save-dev
-npm -i group-css-media-queries-loader" --save-dev
+npm -i babel --save-de,
+npm -i core-js --save-dev,
+npm -i babel-polyfill --save-dev,
+npm -i group-css-media-queries-loader" --save-dev,
 для установки необходимых для сборки пакетов.
 После окончания установки пакетов выполнить команду npm run build.
 Запустится сборка и будет создана папка dist внутри которой размещены файлы сайта.
