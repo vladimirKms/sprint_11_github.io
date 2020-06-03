@@ -5,7 +5,6 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-// подключаем плагин
 const fs = require('fs');
 const environment = process.env.NODE_ENV;
 const stream = fs.createWriteStream("src/services/environment.js");
@@ -16,7 +15,6 @@ stream.once('open', function(fd) {
 });
 var isDev = process.env.NODE_ENV === 'development';
 module.exports = isDev;
-// создаем переменную для development-сборки
 module.exports = {
     entry: { main: './src/index.js' },
     output: {
@@ -26,17 +24,16 @@ module.exports = {
 
     module: {
         rules: [
-                { // тут описываются правила
-            test: /\.js$/, // регулярное выражение, которое ищет все js файлы
-            exclude: /node_modules/, // исключает папку node_modules
-            use: { loader: "babel-loader" } // весь JS обрабатывается пакетом babel-loader
+                { 
+            test: /\.js$/, 
+            exclude: /node_modules/, 
+            use: { loader: "babel-loader" } 
 			 },
                  {
             test: /\.css$/,
             use:  [
                 (isDev ? 'style-loader' :
                 MiniCssExtractPlugin.loader), 
-                /*'css-loader',*/ 
                 {loader:'css-loader',
                 options: {
                  importLoaders: 2
@@ -46,8 +43,7 @@ module.exports = {
                 },
              {
             test: /\.(png|jpg|gif|ico|svg)$/,
-            //use: ['file-loader?name=../images/[name].[ext]', // указали папку, куда складывать изображения
-            use: ['file-loader?name=../dist/images/[name].[ext]',                
+            use: ['file-loader?name=././images/[name].[ext]',                
             {
                                     loader: 'image-webpack-loader',
                                     options: {
@@ -66,7 +62,7 @@ module.exports = {
         },
         plugins: [ 
             new MiniCssExtractPlugin({
-                /*filename: 'style.[contenthash].css',}),*/
+               
                 filename: 'index.[contenthash].css',}),
             new OptimizeCssAssetsPlugin({
                 assetNameRegExp: /\.css$/g,
@@ -77,25 +73,22 @@ module.exports = {
                 canPrint: true,
         }),  
             new HtmlWebpackPlugin({
-                // Означает, что:
-                inject: false, // стили НЕ нужно прописывать внутри тегов
-                template: './src/index.html', // откуда брать образец для сравнения с текущим видом проекта
-                filename: 'index.html', // имя выходного файла, то есть того, что окажется в папке dist после сборки
+                inject: false, 
+                template: './src/index.html', 
+                filename: 'index.html', 
                 minify:
                     false,
-                    /*collapseWhitespace: true*/
+                   
             
 
-                filename: 'index.html' // имя выходного файла, то есть того, что окажется в папке dist после сборки
+                filename: 'index.html' 
 
 
               }),
               new WebpackMd5Hash(),
               new webpack.DefinePlugin({
-                  'process.env.NODE_ENV':JSON.stringify(process.env.NODE_ENV)
+                  'NODE_ENV':JSON.stringify(process.env.NODE_ENV)
               }),
             ],
      
 };  
-//console.log('isDEV', isDev);
-//module.exports = isDev;
