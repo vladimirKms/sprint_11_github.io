@@ -1,7 +1,6 @@
 /* eslint-disable spaced-comment */
 /* eslint-disable prefer-arrow-callback */
 "use strict";
-<<<<<<< HEAD
 import "./pages/index.css";
 import {Api} from './js/api.js';
 import {CardList} from './js/cardList.js';
@@ -9,9 +8,7 @@ import {Card} from './js/card.js';
 import {Popup} from './js/Popup.js';
 import {FormValidator} from './js/FormValidator.js';
 import {UserInfo} from './js/UserInfo.js';
-=======
-import "./pages/index.css"
->>>>>>> f918a62b7aa56a604ef441c5b6dc0efb2e3ca672
+import  env  from './services/environment';
 const placesList = document.querySelector('.places-list'); // создание переменной для общего элемента страницы с карточками
 const addCard = document.querySelector('.popup');// общая форма ввода новой краточки
 const addCardUser = document.querySelector('.popup__user');// общая форма добавления нового user(a)
@@ -44,11 +41,15 @@ const groupId = 'cohort10';
 const token = 'c99d9dc5-01b5-4221-954d-07046ff780fc'
 // Переменная определена некорректно
 // Надо исправить(+)
-const baseUrl = `https://praktikum.tk/${groupId}`;
+const baseUrl = (env==='development') ? `http://praktikum.tk/${groupId}`:`https://praktikum.tk/${groupId}`;
+console.log('URL', baseUrl);
+//const baseUrl = `https://praktikum.tk/${groupId}`;
 const Output = { userName, userJob }
 const Input = { userFormNameInput, userFormJobInput }
 //let likeCount = 0
 const userInfo = new UserInfo(Output, Input);
+//===================================================
+
 
 
 

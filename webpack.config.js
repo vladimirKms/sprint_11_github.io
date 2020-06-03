@@ -5,11 +5,18 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const webpack = require('webpack');
 // подключаем плагин
-const isDev = process.env.NODE_ENV === 'development';
+const fs = require('fs');
+const environment = process.env.NODE_ENV;
+const stream = fs.createWriteStream("src/services/environment.js");
+stream.once('open', function(fd) {
+  stream.write('const env = "'+environment+'";\n');
+  stream.write('export default env;');
+  stream.end();
+});
+var isDev = process.env.NODE_ENV === 'development';
+module.exports = isDev;
 // создаем переменную для development-сборки
-
 module.exports = {
     entry: { main: './src/index.js' },
     output: {
@@ -28,14 +35,24 @@ module.exports = {
             test: /\.css$/,
             use:  [
                 (isDev ? 'style-loader' :
-                MiniCssExtractPlugin.loader), 'css-loader', 'postcss-loader']
+                MiniCssExtractPlugin.loader), 
+                /*'css-loader',*/ 
+                {loader:'css-loader',
+                options: {
+                 importLoaders: 2
+                }
+                }, 
+                'postcss-loader']
                 },
              {
             test: /\.(png|jpg|gif|ico|svg)$/,
-            use: ['file-loader?name=../images/[name].[ext]', // указали папку, куда складывать изображения
-                            {
+            //use: ['file-loader?name=../images/[name].[ext]', // указали папку, куда складывать изображения
+            use: ['file-loader?name=../dist/images/[name].[ext]',                
+            {
                                     loader: 'image-webpack-loader',
-                                    options: {}
+                                    options: {
+                                        esModule: false,
+                                    },
                             },
                     ]
              },
@@ -75,8 +92,10 @@ module.exports = {
               }),
               new WebpackMd5Hash(),
               new webpack.DefinePlugin({
-                  'NODE_ENV':JSON.stringify(process.env.NODE_ENV)
+                  'process.env.NODE_ENV':JSON.stringify(process.env.NODE_ENV)
               }),
-            ]
-
-};
+            ],
+     
+};  
+//console.log('isDEV', isDev);
+//module.exports = isDev;

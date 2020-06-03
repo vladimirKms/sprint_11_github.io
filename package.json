@@ -15,8 +15,6 @@
     "@babel/preset-env": "^7.9.6",
     "autoprefixer": "^9.8.0",
     "babel-loader": "^8.1.0",
-    "babel-polyfill": "^6.26.0",
-    "core-js": "^3.4.1",
     "cross-env": "^7.0.2",
     "css-loader": "^3.5.3",
     "cssnano": "^4.1.10",
@@ -27,23 +25,18 @@
     "mini-css-extract-plugin": "^0.9.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
-<<<<<<< HEAD
     "sockjs": "^0.3.20",
     "sockjs-client": "^1.4.0",
-=======
->>>>>>> f918a62b7aa56a604ef441c5b6dc0efb2e3ca672
     "style-loader": "^1.2.1",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.11",
     "webpack-dev-server": "^3.11.0",
-<<<<<<< HEAD
+    "webpack-loader": "0.0.1",
     "webpack-md5-hash": "0.0.6"
-=======
-    "webpack-md5-hash": "^0.0.6"
->>>>>>> f918a62b7aa56a604ef441c5b6dc0efb2e3ca672
   },
   "dependencies": {
     "babel": "^6.23.0",
+    "core-js": "^3.4.1",
     "babel-polyfill": "^6.26.0",
     "group-css-media-queries-loader": "^3.0.2"
   },
