@@ -6,9 +6,16 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // подключаем плагин
+const fs = require('fs');
+const environment = process.env.NODE_ENV;
+const stream = fs.createWriteStream("src/services/environment.js");
+stream.once('open', function(fd) {
+  stream.write('const env = "'+environment+'";\n');
+  stream.write('export default env;');
+  stream.end();
+});
 var isDev = process.env.NODE_ENV === 'development';
-
-
+module.exports = isDev;
 // создаем переменную для development-сборки
 module.exports = {
     entry: { main: './src/index.js' },
