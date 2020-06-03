@@ -9,7 +9,7 @@
 Git-bash.
 Запустить консоль git-bash.
 В консоле последовательно набрать команды:
-npm -i babel --save-de,
+npm -i babel --save-dev,
 npm -i core-js --save-dev,
 npm -i babel-polyfill --save-dev,
 npm -i group-css-media-queries-loader" --save-dev,
