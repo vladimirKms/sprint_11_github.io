@@ -6,9 +6,10 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // подключаем плагин
-const isDev = process.env.NODE_ENV === 'development';
-// создаем переменную для development-сборки
+var isDev = process.env.NODE_ENV === 'development';
 
+
+// создаем переменную для development-сборки
 module.exports = {
     entry: { main: './src/index.js' },
     output: {
@@ -35,7 +36,9 @@ module.exports = {
             use: ['file-loader?name=../dist/images/[name].[ext]',                
             {
                                     loader: 'image-webpack-loader',
-                                    options: {}
+                                    options: {
+                                        esModule: false,
+                                    },
                             },
                     ]
              },
@@ -75,8 +78,10 @@ module.exports = {
               }),
               new WebpackMd5Hash(),
               new webpack.DefinePlugin({
-                  'NODE_ENV':JSON.stringify(process.env.NODE_ENV)
+                  'process.env.NODE_ENV':JSON.stringify(process.env.NODE_ENV)
               }),
-            ]
-
-};
+            ],
+     
+};  
+//console.log('isDEV', isDev);
+//module.exports = isDev;
