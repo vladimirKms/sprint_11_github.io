@@ -34,7 +34,7 @@ let initialCards = [];
 const cardArr = [];
 const groupId = 'cohort10';
 const token = 'c99d9dc5-01b5-4221-954d-07046ff780fc';
-const env= process.env.NODE_ENV;
+const env= NODE_ENV;
 const baseUrl = (env==='development') ? `http://praktikum.tk/${groupId}`:`https://praktikum.tk/${groupId}`;
 console.log('URL', baseUrl);
 const Output = { userName, userJob };
