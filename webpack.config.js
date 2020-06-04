@@ -5,16 +5,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const WebpackMd5Hash = require('webpack-md5-hash');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
-const fs = require('fs');
-const environment = process.env.NODE_ENV;
-const stream = fs.createWriteStream("src/services/environment.js");
-stream.once('open', function(fd) {
-  stream.write('const env = "'+environment+'";\n');
-  stream.write('export default env;');
-  stream.end();
-});
 var isDev = process.env.NODE_ENV === 'development';
-module.exports = isDev;
 module.exports = {
     entry: { main: './src/index.js' },
     output: {
@@ -88,6 +79,7 @@ module.exports = {
               new WebpackMd5Hash(),
               new webpack.DefinePlugin({
                   'NODE_ENV':JSON.stringify(process.env.NODE_ENV)
+
               }),
             ],
      
