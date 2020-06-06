@@ -21,7 +21,7 @@ npm -i group-css-media-queries-loader --save-dev,
 открытием сайта в окне браузера. В этой сборке доступен режим hotreload
 Т.е. внесение изменений в файлы *.html и *.css в папке src вызовет автоматическое 
 "пересобирание" пакета и внесенные изменения отразятся на сайте.
-ссылка на проект: https://vladimirkms.github.io/sprint_11_github.io/
+<p>ссылка на проект: https://vladimirkms.github.io/sprint_11_github.io/index.html</p>
 
 
 
